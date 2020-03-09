@@ -4,15 +4,17 @@ from data import queries
 app = Flask('codecool_series')
 
 
-@app.route('/')
+@app.route('/index')
 def index():
     shows = queries.get_shows()
     return render_template('index.html', shows=shows)
 
 
+@app.route('/')
 @app.route('/design')
 def design():
     shows = queries.get_first_15_shows()
+
     return render_template('design.html', shows=shows)
 
 

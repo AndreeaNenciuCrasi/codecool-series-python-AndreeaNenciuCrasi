@@ -55,16 +55,8 @@
         <h1 class="title text-center">Welcome page</h1>
         <div class="card">
             <h2>Welcome TV show lovers!</h2>
-            <p>This great site is happy to bring you your favourite TV show's <i>details</i>.</p>
-            <p></p>
-            <p>Okay, actually this is a designed dumb page without any logic.</p>
-            <p>You can find a navigational element, the so called "breadcrumb" above the page's title. Use it for
-                in-depth
-                navigation.
-            </p>
         </div>
         <div class="card">
-            This is an example for a table:
             <table>
                 <thead>
                 <tr>
@@ -72,6 +64,9 @@
                     <th>Year</th>
                     <th>Runtime</th>
                     <th>Rating</th>
+                    <th>Genres</th>
+                    <th>Trailer</th>
+                    <th>Homepage</th>
                     <th class="action-column">e</th>
                 </tr>
                 </thead>
@@ -82,6 +77,9 @@
                     <td>{{ show.year }}</td>
                     <td>{{ show.runtime }}</td>
                     <td>{{ show.rating }}</td>
+                    <td>{{ ', '.join(show['genres'].split(',')[:3]) }}</td>
+                    <td><a href ="{{ show.trailer }}">trailer</a></td>
+                    <td><a href ="{{ show.homepage }}">homepage</a></td>
                     <td class="action-column">
                         <button type="button" class="icon-button"><i class="fa fa-edit fa-fw"></i></button>
                         <button type="button" class="icon-button"><i class="fa fa-trash fa-fw"></i></button>
