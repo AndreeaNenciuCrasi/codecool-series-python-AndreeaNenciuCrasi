@@ -68,64 +68,26 @@
             <table>
                 <thead>
                 <tr>
-                    <th>a</th>
-                    <th>b</th>
-                    <th>c</th>
-                    <th>d</th>
+                    <th>Titel</th>
+                    <th>Year</th>
+                    <th>Runtime</th>
+                    <th>Rating</th>
                     <th class="action-column">e</th>
                 </tr>
                 </thead>
                 <tbody>
+                {% for show in shows %}
                 <tr>
-                    <td>Lorem</td>
-                    <td>Ipsum</td>
-                    <td>Dolor</td>
-                    <td>Sit amet</td>
+                    <td>{{ show.title }}</td>
+                    <td>{{ show.year }}</td>
+                    <td>{{ show.runtime }}</td>
+                    <td>{{ show.rating }}</td>
                     <td class="action-column">
                         <button type="button" class="icon-button"><i class="fa fa-edit fa-fw"></i></button>
                         <button type="button" class="icon-button"><i class="fa fa-trash fa-fw"></i></button>
                     </td>
                 </tr>
-                <tr>
-                    <td>Lorem</td>
-                    <td>Ipsum</td>
-                    <td>Dolor</td>
-                    <td>Sit amet</td>
-                    <td class="action-column">
-                        <button type="button" class="icon-button"><i class="fa fa-edit fa-fw"></i></button>
-                        <button type="button" class="icon-button"><i class="fa fa-trash fa-fw"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Lorem</td>
-                    <td>Ipsum</td>
-                    <td>Dolor</td>
-                    <td>Sit amet</td>
-                    <td class="action-column">
-                        <button type="button" class="icon-button"><i class="fa fa-edit fa-fw"></i></button>
-                        <button type="button" class="icon-button"><i class="fa fa-trash fa-fw"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Lorem</td>
-                    <td>Ipsum</td>
-                    <td>Dolor</td>
-                    <td>Sit amet</td>
-                    <td class="action-column">
-                        <button type="button" class="icon-button"><i class="fa fa-edit fa-fw"></i></button>
-                        <button type="button" class="icon-button"><i class="fa fa-trash fa-fw"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Lorem</td>
-                    <td>Ipsum</td>
-                    <td>Dolor</td>
-                    <td>Sit amet</td>
-                    <td class="action-column">
-                        <button type="button" class="icon-button"><i class="fa fa-edit fa-fw"></i></button>
-                        <button type="button" class="icon-button"><i class="fa fa-trash fa-fw"></i></button>
-                    </td>
-                </tr>
+                {% endfor %}
                 </tbody>
             </table>
         </div>

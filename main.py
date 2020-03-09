@@ -12,7 +12,8 @@ def index():
 
 @app.route('/design')
 def design():
-    return render_template('design.html')
+    shows = queries.get_first_15_shows()
+    return render_template('design.html', shows=shows)
 
 
 def main():
