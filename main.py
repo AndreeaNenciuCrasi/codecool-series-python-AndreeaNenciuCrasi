@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, request, url_for
+from flask import Flask, render_template, redirect, request, url_for, jsonify, make_response
 from data import queries
 
 app = Flask('codecool_series')
@@ -16,6 +16,28 @@ def design():
     shows = queries.get_first_15_shows()
     return render_template('design.html', shows=shows)
 
+@app.route('/api/display-shows-data-in-table')
+def data_shows_display_table():
+    shows = queries.get_first_15_shows()
+    list_of_dictionary =[]
+    shows_dictionary ={}
+    show_dict ={}
+    for show in shows:
+        show_dict['id'] = show['id']
+        show_dict['title'] = show['title']
+        show_dict['year'] = str(show['year'])
+        show_dict['runtime'] = show['runtime']
+        show_dict['trailer'] = show['trailer']
+        show_dict['homepage'] = show['homepage']
+        show_dict['rating'] = float(show['rating'])
+        show_dict['genres'] = show['genres']
+        list_of_dictionary.append(show_dict)
+    i = 0
+    while i < len(list_of_dictionary):
+        shows_dictionary[i] = list_of_dictionary[i]
+        i = i + 1
+    print(shows_dictionary)
+    return jsonify(shows_dictionary)
 
 @app.route('/details/<show_id>')
 def display_show_details(show_id):
