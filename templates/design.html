@@ -73,7 +73,7 @@
                 <tbody>
                 {% for show in shows %}
                 <tr>
-                    <td>{{ show.title }}</td>
+                    <td><a href="{{ url_for('display_show_details', show_id=show.id) }}">{{ show.title }}</a></td>
                     <td>{{ show.year }}</td>
                     <td>{{ show.runtime }}</td>
                     <td>{{ show.rating }}</td>
@@ -91,6 +91,7 @@
         </div>
         <div class="card detailed-view">
             <p>And here is a "detailed" kind of view:</p>
+
             <div class="row">
                 <img src="http://www.impawards.com/2016/posters/deadpool_ver5.jpg" alt="Deadpool poster"
                      class="poster col col-third">
