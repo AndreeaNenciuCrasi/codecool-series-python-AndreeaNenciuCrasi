@@ -53,6 +53,17 @@
             </div>
 
         </div>
+
+        <div class="card detailed-view">
+            <div class="row">
+                {% if show_details[0].trailer %}
+                <iframe width="600" height="400" src="https://www.youtube.com/embed/{{ show_details[0].trailer[27:] }}">
+
+                </iframe>
+                {% endif %}
+            </div>
+
+        </div>
         <div class="card detailed-view">
             <div class="row">
                 <div>
