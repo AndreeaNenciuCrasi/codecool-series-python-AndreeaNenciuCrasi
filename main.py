@@ -22,7 +22,8 @@ def display_show_details(show_id):
     shows = queries.get_first_15_shows()
     show_details = queries.get_show_data(show_id)
     show_actors = queries.get_show_actors(show_id)
-    return render_template('show.html', shows=shows, show_details=show_details, show_actors=show_actors)
+    seasons = queries.get_seasons(show_id)
+    return render_template('show.html', shows=shows, show_details=show_details, show_actors=show_actors, seasons=seasons)
 
 
 def main():

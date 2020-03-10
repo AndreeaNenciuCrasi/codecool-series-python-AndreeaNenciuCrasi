@@ -51,6 +51,22 @@
                     {% endfor %}
                 </ul>
             </div>
+
+        </div>
+        <div class="card detailed-view">
+            <div class="row">
+                <div>
+                <b>List of seasons:</b>
+                <br>
+                <ul>
+                    {% for season in seasons %}
+                    <li><b>{{ season.title }} | {{ season.episodesnumber }} episodes</b></li>
+                    <li>{{ season.overview }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            </div>
+
         </div>
 </body>
 </html>
