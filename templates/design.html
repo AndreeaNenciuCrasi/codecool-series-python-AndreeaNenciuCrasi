@@ -55,38 +55,39 @@
         <h1 class="title text-center">Welcome page</h1>
         <div class="card">
             <h2>Welcome TV show lovers!</h2>
+
         </div>
         <div class="card">
             <table>
                 <thead>
                 <tr>
-                    <th>Titel</th>
+                    <th id="titel">Titel</th>
                     <th>Year</th>
                     <th>Runtime</th>
                     <th>Rating</th>
                     <th>Genres</th>
                     <th>Trailer</th>
                     <th>Homepage</th>
-                    <th class="action-column">e</th>
+{#                    <th class="action-column">e</th>#}
                 </tr>
                 </thead>
-{#                <tbody>#}
-{#                {% for show in shows %}#}
-{#                <tr>#}
-{#                    <td><a href="{{ url_for('display_show_details', show_id=show.id) }}">{{ show.title }}</a></td>#}
-{#                    <td>{{ show.year }}</td>#}
-{#                    <td>{{ show.runtime }}</td>#}
-{#                    <td>{{ show.rating }}</td>#}
-{#                    <td>{{ ', '.join(show['genres'].split(',')[:3]) }}</td>#}
-{#                    <td><a href ="{{ show.trailer }}">trailer</a></td>#}
-{#                    <td><a href ="{{ show.homepage }}">homepage</a></td>#}
+                <tbody>
+                {% for show in shows %}
+                <tr>
+                    <td><a href="{{ url_for('display_show_details', show_id=show.id) }}">{{ show.title }}</a></td>
+                    <td>{{ show.year }}</td>
+                    <td>{{ show.runtime }}</td>
+                    <td>{{ show.rating }}</td>
+                    <td>{{ ', '.join(show['genres'].split(',')[:3]) }}</td>
+                    <td><a href ="{{ show.trailer }}">trailer</a></td>
+                    <td><a href ="{{ show.homepage }}">homepage</a></td>
 {#                    <td class="action-column">#}
 {#                        <button type="button" class="icon-button"><i class="fa fa-edit fa-fw"></i></button>#}
 {#                        <button type="button" class="icon-button"><i class="fa fa-trash fa-fw"></i></button>#}
 {#                    </td>#}
-{#                </tr>#}
-{#                {% endfor %}#}
-{#                </tbody>#}
+                </tr>
+                {% endfor %}
+                </tbody>
             </table>
         </div>
 {#        <div class="card detailed-view">#}
